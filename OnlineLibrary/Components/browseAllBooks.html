@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>All Books</title>
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/BookData.js"></script>
+  </head>
+
+  <body>
+    <script>
+      generateNavBar();
+      display_account_data();
+    </script>
+    <div id="cardsDiv"></div>
+    <script>
+      generateCardsForAllBooks();
+    </script>
+    <style>
+      .card {
+        display: inline-block;
+      }
+      .card-img-top {
+        height: 40%;
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+        <link rel="stylesheet" type="text/css" href="../styles/Sign.css">
+        <script src="../scripts/index.js"></script>
+    </head>
+    <script type= "text/javascript" src="../scripts/AccountData.js"></script>
+    <body style="    background: rgb(0,131,150);
+    background: radial-gradient(circle, rgba(0,131,150,1) 0%, rgba(0,36,77,1) 100%);">
+    <script>
+      if (JSON.parse(localStorage.getItem("LoggedIn")) === "True") window.history.back()
+
+      generateNavBar();
+    </script>
+    <form method= "redirectAction" onsubmit="return createAccount()" action="SignIn.html">
+        <div class="container">
+          <h1 style="color:white;">Sign Up</h1>
+          <p style="color:white;">Please fill in this form to create an account.</p>
+          <hr style="background-color:white;">
+          <label style="color:white;" for="name"><b>Name</b></label>
+          <input type="text" placeholder="Enter Name" id="name" name="name" required>
+        </br>
+          <label style="color:white;" for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" id="email" name="email" required>
+          <span id='CheckMail'></span>
+        </br>
+      
+          <label style="color:white;" for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+        </br>
+          <label style="color:white;" for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" id="psw-repeat" name="psw-repeat" required>
+          <span id='CheckPass'></span>
+      </br>
+          <div class="clearfix">
+            <button type="button" style="padding:1em 1em 1em 1em" class="cancelbtn buttonNorm" onclick="window.history.back()">Cancel</button>
+            <button type="submit" style="padding:1em 1em 1em 1em" class="signupbtn buttonNorm">Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </body>
+</html>

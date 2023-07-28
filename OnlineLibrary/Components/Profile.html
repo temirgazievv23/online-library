@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="../scripts/index.js"></script>
+    <script src="../scripts/AccountData.js"></script>
+  </head>
+  <body>
+    <script>
+      generateNavBar();
+      display_account_data();
+    </script>
+
+    <br />
+    <h2 style="text-align: center">User Profile Card</h2>
+    <div class="card" style="width: 18rem; margin: 0 auto; float: none; margin-top: 10px; margin-bottom: 10px">
+      <img id="profilePicture" class="card-img-top" alt="Card image cap" style="border: 2px solid black" />
+      <div class="card-body">
+        <h5 id="cardName" class="card-title"></h5>
+        <p id="cardEmail" class="card-subtitle mb-2 text-muted"></p>
+        <p id="cardPublishDate" class="card-text"></p>
+        <p id="cardRole" class="card-text"></p>
+
+        <p id="cardPublishDate" class="card-text"></p>
+      </div>
+
+      <form id="resetPasswordForm" action="../Components/ResetPassword.html" style="margin: 0px 10px 10px 10px; display:none">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" >Reset Password</button>
+        <!-- <input type="submit" style="margin: 10px 10px 10px 10px" class="btn btn-outline-danger my-2 my-sm-0" value="Reset Password"> -->
+      </form>
+    </div>
+    <script>
+      if(JSON.parse(localStorage.getItem("LoggedIn")) === "True" &&
+        UserFromJson(JSON.parse(localStorage.getItem("AccLoggedIn"))).getUserMail() === decodeURI(location.href.split("=")[1]))
+          document.getElementById("resetPasswordForm").style.setProperty("display", "block");   
+
+      display_Profile_details();
+    </script>
+  </body>
+</html>
